@@ -1,0 +1,134 @@
+/* General styling for the card component */
+.card {
+    margin: 10px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.card-title {
+    font-size: 20px;
+}
+
+.card-text {
+    font-size: 15px;
+}
+
+.btn-primary {
+    font-size: 15px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.container {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+/* Custom styling for table responsiveness on mobile */
+@media (max-width: 768px) {
+    /* Hide the table header for smaller screens */
+    table thead {
+        display: none;
+    }
+
+    /* Make the table behave more like a block list on small screens */
+    table, table tbody, table tr, table td {
+        display: block;
+        width: 100%;
+    }
+
+    /* Add spacing between rows */
+    table tr {
+        margin-bottom: 10px;
+        border: 1px solid #e5e7eb; /* Light gray border */
+    }
+
+    /* Add padding and alignment to table cells */
+    table td {
+        padding: 0.75rem;
+        text-align: right; /* Align content to the right */
+        position: relative;
+        border: none;
+    }
+
+    /* Add labels for table data (using the `data-label` attribute) */
+    table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 0;
+        width: 50%; /* Make space for the label */
+        padding-left: 15px;
+        font-weight: 600;
+        text-align: left;
+    }
+
+    /* Make buttons take up full width on smaller screens */
+    .btn-primary {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Additional styles to improve visuals */
+.bg-primary {
+    background-color: #007bff;
+}
+
+.bg-dark {
+    background-color: #343a40;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25em 0.4em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.375rem;
+    color: #fff;
+}
+
+.bg-blue-500 {
+    background-color: #4299e1; /* Tailwind's blue-500 equivalent */
+}
+
+.bg-gray-700 {
+    background-color: #4a5568; /* Tailwind's gray-700 equivalent */
+}
+
+.text-muted {
+    color: #6c757d; /* Muted gray text color */
+}
+
+.text-white {
+    color: #ffffff;
+}
+
+.text-gray-500 {
+    color: #6b7280; /* Tailwind's gray-500 equivalent */
+}
+
+/* Additional table styling for desktop */
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+thead th {
+    background-color: #f8f9fa; /* Light background for header */
+    padding: 0.75rem;
+    text-align: left;
+}
+
+tbody tr {
+    border-bottom: 1px solid #dee2e6;
+}
+
+tbody td {
+    padding: 0.75rem;
+}

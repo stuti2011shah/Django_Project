@@ -1,0 +1,99 @@
+/* Center the left block container */
+.mb-3.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width */
+    height: 20rem; /* Adjust the height as needed */
+    max-width: 500px; /* Limit the width of the form container */
+    margin: 10rem auto; /* Center horizontally */
+    background-color: #f8f9fa; /* Optional: background color */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Make sure the form content fits inside the container */
+form {
+    width: 100%;
+    padding: 1rem;
+}
+
+.submit-button{
+    margin-top: 1.5rem;
+}
+
+
+/* Styling for the inner divs in the right block */
+.inner {
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    width: 100%; /* Adjust to 100% for full width */
+    max-width: 500px; /* Set a max-width to avoid overexpansion */
+    border-radius: 5px;
+    text-align: center;
+    word-wrap: break-word; /* Ensure long words wrap within the box */
+}
+
+/* Heading styles */
+.inner h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+    line-height: 1.5;
+    text-align: center;
+}
+
+/* Paragraph styles */
+.inner p {
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    color: #333;
+    line-height: 1.5;
+    text-align: center;
+    word-wrap: break-word; /* Ensure text wraps inside the box */
+}
+
+/* Responsive Design for Left Block */
+@media (max-width: 768px) {
+    .mb-3.container {
+        max-width: 90%; /* Take up more space on smaller screens */
+        height: auto; /* Adjust height based on content */
+    }
+
+    .inner {
+        width: 90%; /* Adjust width for smaller screens */
+        padding: 8px; /* Reduce padding for smaller screens */
+    }
+
+    .inner h2 {
+        font-size: 1.2rem; /* Slightly smaller font for headings */
+    }
+
+    .inner p {
+        font-size: 0.9rem; /* Slightly smaller font for paragraphs */
+    }
+}
+
+/* Responsive Design for Very Small Devices */
+@media (max-width: 480px) {
+    .mb-3.container {
+        margin: 5rem auto; /* Reduce margin on smaller screens */
+    }
+
+    .inner {
+        width: 100%; /* Full width on very small screens */
+    }
+
+    .inner h2 {
+        font-size: 1.1rem; /* Further reduce heading font size */
+    }
+
+    .inner p {
+        font-size: 0.85rem; /* Further reduce paragraph font size */
+    }
+}

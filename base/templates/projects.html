@@ -1,0 +1,74 @@
+{% extends 'main.html' %}
+{% load static %} 
+
+{% block title %}
+<title>DevConnector| Project</title>
+{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}" />
+{% endblock css %}
+
+{% block left %}
+<div class="max-w-lg rounded-lg overflow-hidden shadow-lg bg-white ml-[500px]">
+  <div class="p-4">
+    <h2 class="text-2xl font-bold mb-2">{{repo}}</h2>
+
+  </div>
+  <div class="px-4 py-2">
+    <h3 class="text-lg font-bold mb-2">Latest Commit</h3>
+    {% if c_message %}
+    <ul>
+      <li class="mb-2">
+        <span class="font-bold">Date:</span>
+        <span class="text-gray-700">{{c_date}}</span>
+      </li>
+      <li class="mb-2">
+        <span class="font-bold">Author:</span>
+        <span class="text-gray-700">{{c_author}}</span>
+      </li>
+      <li class="mb-2">
+        <span class="font-bold">Email:</span>
+        <span class="text-gray-700">{{c_email}}</span>
+      </li>
+    </ul>
+    {% endif %}
+  </div>
+  <div class="px-4 py-2">
+    <h3 class="text-lg font-bold mb-2">Latest Issue</h3>
+    <ul>
+      <li class="mb-2">
+        <span class="font-bold">Body:</span>
+        <span class="text-gray-700">{{body}}</span>
+      </li>
+      <li class="mb-2">
+        <span class="font-bold">Created:</span>
+        <span class="text-gray-700">{{issue_created}}</span>
+      </li>
+    </ul>
+  </div>
+  <div class="px-4 py-2">
+    <h3 class="text-lg font-bold mb-2">Submit Repository URL</h3>
+    <form action="" method="POST">
+      {% csrf_token %}
+      <div class="mb-2">
+        <label class="block text-gray-700 font-bold mb-2" for="url">
+          Repository Name
+        </label>
+        <input name="repo" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="url" type="text" placeholder="Enter repository Name">
+      </div>
+      <div class="mb-2">
+        <label class="block text-gray-700 font-bold mb-2" for="leader">
+          Team Leader Username
+        </label>
+        <input name="owner" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="leader" type="text" placeholder="Enter team leader username">
+      </div>
+      <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
+        Submit
+      </button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock left %}

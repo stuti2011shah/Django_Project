@@ -1,0 +1,43 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/tag.css' %}">
+{% endblock %}
+{% block navContent %}
+<nav>
+  <div class="navbar-left">
+    <a href="{% url 'home' %}">
+      <img src="{% static 'assets/icon.png' %}" alt="DevConnector Logo">
+      <span>DevConnector</span>
+    </a>
+  </div>
+  {% block navbar %}
+  <div class="navbar-right">
+    <ul>
+      <li><a href="{% url 'logout' %}" class="btn btn-success">Logout</a></li>
+    </ul>
+  </div>
+  {% endblock navbar %}
+</nav>
+{% endblock navContent %}
+{% block left %}
+<div class="mb-3 container">
+    <h1>Create Hackthon</h1>
+    <form action="{% url 'hackathonform' organization.name %}" method="POST">
+
+        {% csrf_token %}
+        <label for="hackathonname" class="form-label">Hackathon Name</label>
+        <input type="text" class="form-control" name="hackathonname" id="hackathonname"placeholder="Hackathon Name" required>
+        
+        <label for="hackathondesc" class="form-label">Hackathon Description</label>
+        <input type="text" class="form-control" name="hackathondesc" id="hackathondesc" placeholder="Hackathon Description" required>
+        
+        <button type="submit" class="btn btn-primary submit-button">Create</button>
+        <button class="btn btn-primary submit-button">Cancel</button>
+    </form>
+</div>
+{% endblock left %}
+
+
+

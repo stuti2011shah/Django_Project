@@ -1,0 +1,41 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block title %}
+<title>DevConnector | Login</title>
+{% endblock title %}
+
+{% block navbar %}
+<div></div> <!-- Empty navbar if needed -->
+{% endblock navbar %}
+
+{% block content %} 
+<section class="loginorg">
+    <main class="main">
+        <div class="wrapper">
+            <div class="heading">
+                <h1 class="text text-xl">Login</h1>
+            </div>
+            <form name="signin" class="form" method="POST">
+                {% csrf_token %}
+                <div class="input-control">
+                    <input type="email" name="orgEmail" id="email" class="input-field" placeholder="Organisation Email">
+                </div>
+                <div class="input-control">
+                    <input type="password" name="orgPass" id="password" class="input-field" placeholder="Password">
+                </div>
+                <div class="input-control">
+                    <input type="submit" name="submit" class="input-submit" value="Log In">
+                </div>
+            </form>
+            <div class="input-control">
+                <a href="{% url 'registerOrg' %}" class="text text-center">Don't have an account?</a>
+            </div>
+        </div>
+    </main>
+</section>
+{% endblock content %}
+
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+{% endblock %}

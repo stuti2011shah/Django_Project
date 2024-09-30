@@ -1,0 +1,29 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}
+<title>DevConnector| Login</title>
+{% endblock %}
+{% block navbar %}
+<div></div>
+{% endblock navbar %}
+{% block content %}
+<section class="loginselect">
+    <div class="flex justify-center items-center min-h-screen w-full bg-gray-100">
+        <div class="w-full max-w-md p-12 bg-white rounded shadow-lg">
+            <h1 class="text-xl text-center font-semibold mb-6">Login to your account</h1>
+            <form class="flex flex-col">
+                <a href="{% url 'social:begin' 'github' %}" class="text-center w-full p-3 mb-4 font-small tracking-widest text-white uppercase bg-black focus:outline-none hover:bg-gray-900 rounded">
+                    Login with Github <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="{% url 'loginOrg' %}" class="text-center w-full p-3 font-small tracking-widest text-white uppercase bg-black focus:outline-none hover:bg-gray-900 rounded">
+                    Login as Company <i class="fa-solid fa-building"></i>
+                </a>
+            </form>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+{% block styles %}
+<link rel="stylesheet" type="text/css" href="{% static './css/login.css' %}">
+{% endblock %}
